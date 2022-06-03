@@ -1,0 +1,59 @@
+- init:
+    run: rm -f hw_1
+    blocker: true
+
+- build:
+    run: g++ -Wall -Werror src/main.cpp src/QStack.cpp -I include -o recitation_3_2 -lm # timeout: 5
+    exit: 0
+    points: 10
+    blocker: true
+
+
+- case3:
+    run: ./recitation_3_2
+    script: 
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: 'Pushed element:' # timeout: 5
+        - send: '1'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: 'Pushed element:' # timeout: 5
+        - send: '3'
+        - expect: '.*'   # timeout: 5
+        - send: 'A'
+        - expect: 'Pushed element:' # timeout: 5
+        - send: '5'
+        - expect: '.*'   # timeout: 5
+        - send: 'D'
+        - expect: '5 is popped(\r\n).*' # timeout: 5
+        - send: 'P'
+        - expect: '3 1 (\r\n).*' # timeout: 5
+        - send: 'A'
+        - expect: 'Pushed element:' # timeout: 5
+        - send: '3'
+        - expect: '.*'   # timeout: 5
+        - send: 'P'
+        - expect: '3 3 1 (\r\n).*' # timeout: 5
+        - send: 'D'
+        - expect: '3 is popped(\r\n).*' # timeout: 5
+        - send: 'D'
+        - expect: '3 is popped(\r\n).*' # timeout: 5
+        - send: 'D'
+        - expect: '1 is popped(\r\n).*' # timeout: 5
+        - send: 'D'
+        - expect: 'Stack is empty(\r\n).*' # timeout: 5
+        - send: 'A'
+        - expect: 'Pushed element:' # timeout: 5
+        - send: '1'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: 'Pushed element:' # timeout: 5
+        - send: '2'
+        - expect: '.*'   # timeout: 5
+        - send: 'P'
+        - expect: '2 1 (\r\n).*' # timeout: 5
+        - send: 'E'
+        - expect: _EOF_ # timeout: 5
+    exit: 0
+    points: 90

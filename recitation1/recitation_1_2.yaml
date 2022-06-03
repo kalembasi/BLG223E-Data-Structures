@@ -1,0 +1,148 @@
+- init:
+    run: rm -f recitation_1_2
+    blocker: true
+
+- build:
+    run: g++ -Wall -Werror main.cpp -o recitation_1_2 -lm # timeout: 5
+    exit: 0
+    points: 1
+    blocker: true
+
+- case1:
+    run: ./recitation_1_2
+    script: 
+        - expect: 'Enter a choice {A,L,M,E}:\s+' # timeout: 5
+        - send: 'A'
+        - expect: 'Enter the name of student:\s+' # timeout: 5
+        - send: 'Yunus'
+        - expect: 'Enter the grade of student:\s+' # timeout: 5
+        - send: '70'
+        - expect: 'Enter a choice {A,L,M,E}:\s+' # timeout: 5
+        - send: 'L'
+        - expect: 'Yunus(.*?)70' # timeout: 5
+        - send: 'M'
+        - expect: 'Yunus(.*?)70' # timeout: 5
+        - send: 'E'
+        - expect: _EOF_ # timeout: 5
+    exit: 0
+    points: 1 
+
+- case2:
+    run: ./recitation_1_2
+    script: 
+        - expect: 'Enter a choice {A,L,M,E}:\s+' # timeout: 5
+        - send: 'A'
+        - expect: 'Enter the name of student:\s+' # timeout: 5
+        - send: 'Yunus'
+        - expect: 'Enter the grade of student:\s+' # timeout: 5
+        - send: '70'
+        - expect: 'Enter a choice {A,L,M,E}:\s+' # timeout: 5
+        - send: 'A'
+        - expect: 'Enter the name of student:\s+' # timeout: 5
+        - send: 'Emre'
+        - expect: 'Enter the grade of student:\s+' # timeout: 5
+        - send: '60'
+        - expect: 'Enter a choice {A,L,M,E}:\s+' # timeout: 5
+        - send: 'A'
+        - expect: 'Enter the name of student:\s+' # timeout: 5
+        - send: 'Okan'
+        - expect: 'Enter the grade of student:\s+' # timeout: 5
+        - send: '80'
+        - expect: 'Enter a choice {A,L,M,E}:\s+' # timeout: 5
+        - send: 'A'
+        - expect: 'Enter the name of student:\s+' # timeout: 5
+        - send: 'Burcu'
+        - expect: 'Enter the grade of student:\s+' # timeout: 5
+        - send: '75'
+        - expect: 'Enter a choice {A,L,M,E}:\s+' # timeout: 5
+        - send: 'A'
+        - expect: 'Enter the name of student:\s+' # timeout: 5
+        - send: 'Ahmet'
+        - expect: 'Enter the grade of student:\s+' # timeout: 5
+        - send: '70'
+        - expect: 'Enter a choice {A,L,M,E}:\s+' # timeout: 5
+        - send: 'L'
+        - expect: 'Yunus(.*?)70(\r\n)*Emre(.*?)60(\r\n)*Okan(.*?)80(\r\n)*Burcu(.*?)75(\r\n)*Ahmet(.*?)70' # timeout: 5
+        - expect: 'Enter a choice {A,L,M,E}:\s+' # timeout: 5
+        - send: 'M'
+        - expect: 'Okan(.*?)80' # timeout: 5
+        - send: 'E'
+        - expect: _EOF_ # timeout: 5
+    exit: 0
+    points: 1 
+
+- case3:
+    run: ./recitation_1_2
+    script: 
+        - expect: 'Enter a choice {A,L,M,E}:\s+' # timeout: 5
+        - send: 'A'
+        - expect: 'Enter the name of student:\s+' # timeout: 5
+        - send: 'Yunus'
+        - expect: 'Enter the grade of student:\s+' # timeout: 5
+        - send: '70'
+        - expect: 'Enter a choice {A,L,M,E}:\s+' # timeout: 5
+        - send: 'A'
+        - expect: 'Enter the name of student:\s+' # timeout: 5
+        - send: 'Emre'
+        - expect: 'Enter the grade of student:\s+' # timeout: 5
+        - send: '60'
+        - expect: 'Enter a choice {A,L,M,E}:\s+' # timeout: 5
+        - send: 'A'
+        - expect: 'Enter the name of student:\s+' # timeout: 5
+        - send: 'Okan'
+        - expect: 'Enter the grade of student:\s+' # timeout: 5
+        - send: '80'
+        - expect: 'Enter a choice {A,L,M,E}:\s+' # timeout: 5
+        - send: 'A'
+        - expect: 'Enter the name of student:\s+' # timeout: 5
+        - send: 'Burcu'
+        - expect: 'Enter the grade of student:\s+' # timeout: 5
+        - send: '75'
+        - expect: 'Enter a choice {A,L,M,E}:\s+' # timeout: 5
+        - send: 'A'
+        - expect: 'Enter the name of student:\s+' # timeout: 5
+        - send: 'Ahmet'
+        - expect: 'Enter the grade of student:\s+' # timeout: 5
+        - send: '70'
+        - expect: 'Enter a choice {A,L,M,E}:\s+' # timeout: 5
+        - send: 'A'
+        - expect: 'Enter the name of student:\s+' # timeout: 5
+        - send: 'Ebru'
+        - expect: 'Enter the grade of student:\s+' # timeout: 5
+        - send: '75'
+        - expect: 'Enter a choice {A,L,M,E}:\s+' # timeout: 5
+        - send: 'A'
+        - expect: 'Enter the name of student:\s+' # timeout: 5
+        - send: 'Ali'
+        - expect: 'Enter the grade of student:\s+' # timeout: 5
+        - send: '50'
+        - expect: 'Enter a choice {A,L,M,E}:\s+' # timeout: 5
+        - send: 'A'
+        - expect: 'Enter the name of student:\s+' # timeout: 5
+        - send: 'Hakan'
+        - expect: 'Enter the grade of student:\s+' # timeout: 5
+        - send: '55'
+        - expect: 'Enter a choice {A,L,M,E}:\s+' # timeout: 5
+        - send: 'A'
+        - expect: 'Enter the name of student:\s+' # timeout: 5
+        - send: 'Fatma'
+        - expect: 'Enter the grade of student:\s+' # timeout: 5
+        - send: '80'
+        - expect: 'Enter a choice {A,L,M,E}:\s+' # timeout: 5
+        - send: 'A'
+        - expect: 'Enter the name of student:\s+' # timeout: 5
+        - send: 'Ferhat'
+        - expect: 'Enter the grade of student:\s+' # timeout: 5
+        - send: '90'
+        - expect: 'Enter a choice {A,L,M,E}:\s+' # timeout: 5
+        - send: 'L'
+        - expect: 'Yunus(.*?)70(\r\n)*Emre(.*?)60(\r\n)*Okan(.*?)80(\r\n)*Burcu(.*?)75(\r\n)*Ahmet(.*?)70(\r\n)*Ebru(.*?)75(\r\n)*Ali(.*?)50(\r\n)*Hakan(.*?)55(\r\n)*Fatma(.*?)80(\r\n)*Ferhat(.*?)90' # timeout: 5
+        - expect: 'Enter a choice {A,L,M,E}:\s+' # timeout: 5
+        - send: 'M'
+        - expect: 'Ferhat(.*?)90' # timeout: 5
+        - send: 'E'
+        - expect: _EOF_ # timeout: 5
+    exit: 0
+    points: 1 
+
+

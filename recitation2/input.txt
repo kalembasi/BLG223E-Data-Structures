@@ -1,0 +1,23 @@
+artistName,trackID,keyword,URL,viewCount
+System F vs Armin van Buuren,Exhale (Official Video),system f exhale,https://www.youtube.com/watch?v=uG0x0dobSQc,764806
+System F feat. Armin van Buuren,Exhale (Original Mix),system f exhale,https://www.youtube.com/watch?v=QaoEajxFsJU,182959
+System F Featuring Armin Van Buuren,Exhale (Original) (2001),system f exhale,https://www.youtube.com/watch?v=TDHXvaTaID0,47914
+System F feat. Armin van Buuren,Exhale (Original),system f exhale,https://www.youtube.com/watch?v=K8ZS0nktvSc,1470
+Stardust,Music Sounds Better With You (Official Music Video),music sounds better with you,https://www.youtube.com/watch?v=FQlAEiCb8m0,60954568
+Spacedust,Music Feels Good With You,music sounds better with you,https://www.youtube.com/watch?v=LQ-xHxbdVw8,3066
+Fred Baker Vs. Nyram,Confirmation (Original Mix),confirmation fred baker,https://www.youtube.com/watch?v=klV7NG64eTA,136733
+Fred Baker Vs Nyram,Confirmation (2005),confirmation fred baker,https://www.youtube.com/watch?v=wYJSK9uAwX0,11949
+FRED BAKER vs NYRAM,Confirmation,confirmation fred baker,https://www.youtube.com/watch?v=725ZP0mACeo,8652
+Confirmation,,confirmation fred baker,https://www.youtube.com/watch?v=thfI19peL94,9738
+Mike Foyle vs Signalrunners,Love Theme Dusk (Mike's Broken Record Mix),love theme dusk mike foyle vs signalrunners,https://www.youtube.com/watch?v=_YXrVCjzk0s,205211
+Signalrunners & Mike Foyle,Love Theme Dusk (Mike's Broken Record Mix) HQ,love theme dusk mike foyle vs signalrunners,https://www.youtube.com/watch?v=4zMFoClhw10,74219
+Mike Foyle vs Signalrunners,Love Theme Dusk,love theme dusk mike foyle vs signalrunners,https://www.youtube.com/watch?v=9iHcXbilzlI,25706
+Mike Foyle Vs Signalrunners,Love Theme Dusk (Mike's Broken Record Mix) (2005) *Leaked Version*,love theme dusk mike foyle vs signalrunners,https://www.youtube.com/watch?v=3CoKOLae6NA,3329
+John O'Callaghan & Bryan Kearney,Exactly (Original Mix),bryan kearney exactly,https://www.youtube.com/watch?v=DJ0NrVZq3nQ,224162
+O'Callaghan & Kearney,Exactly (Original Mix) (2006),bryan kearney exactly,https://www.youtube.com/watch?v=HxKdgNy5QXc,12028
+John O'Callaghan & Bryan Kearney,Exactly,bryan kearney exactly,https://www.youtube.com/watch?v=lllRp2-4caw,281890
+John O'Callaghan & Bryan Kearney,Exactly (O'Callaghan & Kearney) (Original Mix),bryan kearney exactly,https://www.youtube.com/watch?v=k9gbmF8rMzM,17085
+Balearic Bill,destination sunshine (Tiesto Power Mix) [1999],destination sunshine tiesto remix,https://www.youtube.com/watch?v=hWqGGKSKOwE,167713
+DJ Tiesto,Destination Sunshine,destination sunshine tiesto remix,https://www.youtube.com/watch?v=Zsq0W7P6sqo,1556907
+Balearic Bill,Destination Sunshine (DJ Tiesto Power Mix) (1999),destination sunshine tiesto remix,https://www.youtube.com/watch?v=g1OQT5Ud96k,43116
+Joy Kitikonti,JoyDontStop (Joyenergizer Mix),joydontstop joyenergizer mix,https://www.youtube.com/watch?v=DO_J5CjYESA&t=35s,5329

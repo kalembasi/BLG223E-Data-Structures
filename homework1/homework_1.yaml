@@ -1,0 +1,467 @@
+- init:
+    run: rm -f hw_1
+    blocker: true
+
+- build:
+    run: g++ -Wall -Werror src/main.cpp src/MultiList.cpp src/MultiNode.cpp -I include -o hw_1 -lm # timeout: 5
+    exit: 0
+    points: 10
+    blocker: true
+
+- case1:
+    run: ./hw_1
+    script: 
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/14 15:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'P'
+        - expect: '2022/03/14:(\r\n)15:00:00->itu.edu.tr(\r\n).*' # timeout: 5
+        - send: 'E'
+        - expect: _EOF_ # timeout: 5
+    exit: 0
+    points: 10
+
+- case2:
+    run: ./hw_1
+    script: 
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/14 15:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'D'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/14 15:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'P'
+        - expect: '2022/03/14:(\r\n).*' # timeout: 5
+        - send: 'E'
+        - expect: _EOF_ # timeout: 5
+    exit: 0
+    points: 10 
+
+- case3:
+    run: ./hw_1
+    script: 
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/14 15:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'ninova.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/14 12:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'bidb.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/14 14:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'webmail.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/14 13:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'sis.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/08 16:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'portal.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/08 15:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'kutuphane.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/08 14:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'kepler-beta.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/08 13:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'P'
+        - expect: '2022/03/08:(\r\n)13:00:00->kepler-beta.itu.edu.tr(\r\n)14:00:00->kutuphane.itu.edu.tr(\r\n)15:00:00->portal.itu.edu.tr(\r\n)16:00:00->sis.itu.edu.tr(\r\n)2022/03/14:(\r\n)12:00:00->ninova.itu.edu.tr(\r\n)13:00:00->webmail.itu.edu.tr(\r\n)14:00:00->bidb.itu.edu.tr(\r\n)15:00:00->itu.edu.tr(\r\n).*' # timeout: 5
+        - send: 'E'
+        - expect: _EOF_ # timeout: 5
+    exit: 0
+    points: 10 
+
+- case4:
+    run: ./hw_1
+    script: 
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/14 15:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'ninova.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/14 12:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'bidb.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/14 14:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'webmail.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/14 13:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'sis.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/08 16:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'portal.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/08 15:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'kutuphane.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/08 14:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'kepler-beta.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/08 13:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'bbf.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/16 11:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'bm.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/16 12:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'lee.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/16 13:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'akademi.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/16 14:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'sks.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/15 17:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'kim.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/15 11:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'bap.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/15 12:30:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'pdb.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/15 14:00:10'
+        - expect: '.*' # timeout: 5
+        - send: 'P'
+        - expect: '2022/03/08:(\r\n)13:00:00->kepler-beta.itu.edu.tr(\r\n)14:00:00->kutuphane.itu.edu.tr(\r\n)15:00:00->portal.itu.edu.tr(\r\n)16:00:00->sis.itu.edu.tr(\r\n)2022/03/14:(\r\n)12:00:00->ninova.itu.edu.tr(\r\n)13:00:00->webmail.itu.edu.tr(\r\n)14:00:00->bidb.itu.edu.tr(\r\n)15:00:00->itu.edu.tr(\r\n)2022/03/15:(\r\n)11:00:00->kim.itu.edu.tr(\r\n)12:30:00->bap.itu.edu.tr(\r\n)14:00:10->pdb.itu.edu.tr(\r\n)17:00:00->sks.itu.edu.tr(\r\n)2022/03/16:(\r\n)11:00:00->bbf.itu.edu.tr(\r\n)12:00:00->bm.itu.edu.tr(\r\n)13:00:00->lee.itu.edu.tr(\r\n)14:00:00->akademi.itu.edu.tr(\r\n).*' # timeout: 5
+        - send: 'E'
+        - expect: _EOF_ # timeout: 5
+    exit: 0
+    points: 20 
+
+- case5:
+    run: ./hw_1
+    script: 
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/14 15:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'ninova.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/14 12:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'bidb.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/14 14:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'webmail.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/14 13:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'sis.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/08 16:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'portal.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/08 15:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'kutuphane.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/08 14:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'kepler-beta.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/08 13:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'bbf.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/16 11:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'bm.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/16 12:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'lee.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/16 13:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'akademi.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/16 14:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'sks.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/15 17:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'kim.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/15 11:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'bap.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/15 12:30:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'pdb.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/15 14:00:10'
+        - expect: '.*' # timeout: 5
+        - send: 'D'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/14 13:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'D'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/14 14:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'D'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/16 12:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'mezun.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/16 12:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'P'
+        - expect: '2022/03/08:(\r\n)13:00:00->kepler-beta.itu.edu.tr(\r\n)14:00:00->kutuphane.itu.edu.tr(\r\n)15:00:00->portal.itu.edu.tr(\r\n)16:00:00->sis.itu.edu.tr(\r\n)2022/03/14:(\r\n)12:00:00->ninova.itu.edu.tr(\r\n)15:00:00->itu.edu.tr(\r\n)2022/03/15:(\r\n)11:00:00->kim.itu.edu.tr(\r\n)12:30:00->bap.itu.edu.tr(\r\n)14:00:10->pdb.itu.edu.tr(\r\n)17:00:00->sks.itu.edu.tr(\r\n)2022/03/16:(\r\n)11:00:00->bbf.itu.edu.tr(\r\n)12:00:00->mezun.itu.edu.tr(\r\n)13:00:00->lee.itu.edu.tr(\r\n)14:00:00->akademi.itu.edu.tr(\r\n).*' # timeout: 5
+        - send: 'E'
+        - expect: _EOF_ # timeout: 5
+    exit: 0
+    points: 20 
+
+- case6:
+    run: ./hw_1
+    script: 
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/14 15:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'ninova.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/14 12:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'bidb.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/14 14:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'webmail.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/14 13:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'sis.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/08 16:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'portal.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/08 15:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'kutuphane.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/08 14:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'kepler-beta.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/08 13:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'bbf.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/16 11:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'bm.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/16 12:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'lee.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/16 13:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'akademi.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/16 14:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'sks.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/15 17:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'kim.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/15 11:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'bap.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/15 12:30:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'pdb.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/15 14:00:10'
+        - expect: '.*' # timeout: 5
+        - send: 'D'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/14 13:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'D'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/14 14:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'D'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/16 12:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'A'
+        - expect: '.*' # timeout: 5
+        - send: 'mezun.itu.edu.tr'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/16 12:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'D'
+        - expect: '.*' # timeout: 5
+        - send: '2022/03/08 13:00:00'
+        - expect: '.*' # timeout: 5
+        - send: 'P'
+        - expect: '2022/03/08:(\r\n)14:00:00->kutuphane.itu.edu.tr(\r\n)15:00:00->portal.itu.edu.tr(\r\n)16:00:00->sis.itu.edu.tr(\r\n)2022/03/14:(\r\n)12:00:00->ninova.itu.edu.tr(\r\n)15:00:00->itu.edu.tr(\r\n)2022/03/15:(\r\n)11:00:00->kim.itu.edu.tr(\r\n)12:30:00->bap.itu.edu.tr(\r\n)14:00:10->pdb.itu.edu.tr(\r\n)17:00:00->sks.itu.edu.tr(\r\n)2022/03/16:(\r\n)11:00:00->bbf.itu.edu.tr(\r\n)12:00:00->mezun.itu.edu.tr(\r\n)13:00:00->lee.itu.edu.tr(\r\n)14:00:00->akademi.itu.edu.tr(\r\n).*' # timeout: 5
+        - send: 'E'
+        - expect: _EOF_ # timeout: 5
+    exit: 0
+    points: 20 
